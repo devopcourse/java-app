@@ -61,11 +61,13 @@ pipeline {
             }
         }
 	   stage {
-		steps {
-		    deploy adapters: [tomcat9(url: 'http://3.250.179.0:8080/', credentialsId: 'tomcat')], 
-                    war: 'target/*.war',
-                    contextPath: 'app'
-		}
+		   steps {
+		      deploy adapters: [tomcat9(url: 'http://3.250.179.0:8080/', credentialsId: 'tomcat')], 
+              war: 'target/*.war',
+              contextPath: 'app'
+		  }
 	   }
     }
 }
+
+
